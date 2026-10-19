@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Expense Tracker</h1>
+
+    <div id="overview">
+        <div  id="total">
+            <span id="overviewHeadings">Total expense</span>
+            <span id="totalAmount"></span>
+        </div>
+       
+        <div id="Category">
+            <div id="oneCategory">
+                <span id="food" class="CategoryHeadings">Food</span>
+                <span id="foodAmount" class="CategoryAmount"></span>
+            </div>
+            <div id="oneCategory">
+                <span id="travel" class="CategoryHeadings">travel</span>
+                <span id="travelAmount"  class="CategoryAmount"></span>
+            </div>
+            <div id="oneCategory">
+                <span id="other" class="CategoryHeadings">other</span>
+                <span id="otherAmount"  class="CategoryAmount"></span>
+            </div>
+        </div>
+      
+    </div>
+    
+    <div class="AddForm">
+        <div class="oneInputField">
+            <label for="expenseName">Name</label>
+            <input type="text" id="expenseName">
+        </div>
+        <div class="oneInputField">
+            <label for="expenseAmount">Amount</label>
+            <input type="number" id="expenseAmount">
+        </div>
+        <div class="oneInputField">
+            <label for="expenseCategory">Category</label>
+            <select name="Category" id="expenseCategory">
+                <option value="other">Other</option>
+                <option value="travel">Travel</option>
+                <option value="food">Food</option>
+            </select>
+        </div>
+            <button id="addBtn">Add</button>
+    </div>
+
+    <div  class="filter">
+
+        <input type="text" id="search">
+        <button id="searchBtn">Search</button>
+
+        <select name="filter" id="filter">
+            <option value="All">All</option>
+            <option value="travel">Travel</option>
+            <option value="food">Food</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+
+    <ul id="expenseList"></ul>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+/* ==================== Reset ==================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --background: #f1f5f9;
+    --surface: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --danger: #dc2626;
+    --danger-hover: #b91c1c;
+    --radius: 12px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 32px 16px;
+    line-height: 1.5;
+}
+
+/* ==================== Main Heading ==================== */
+
+h1 {
+    max-width: 900px;
+    margin: 0 auto 28px;
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+/* ==================== Overview ==================== */
+
+#overview {
+    max-width: 900px;
+    margin: 0 auto 24px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+}
+
+#total,
+#Category {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+    box-shadow: 0 4px 12px rgb(15 23 42 / 4%);
+}
+
+#total {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+#overviewHeadings {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+#totalAmount {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+#Category {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+#oneCategory {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.CategoryHeadings {
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-transform: capitalize;
+}
+
+.CategoryAmount {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+/* ==================== Add Expense Form ==================== */
+
+.AddForm {
+    max-width: 900px;
+    margin: 0 auto 24px;
+    padding: 24px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgb(15 23 42 / 4%);
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.2fr auto;
+    align-items: end;
+    gap: 16px;
+}
+
+.oneInputField {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+input,
+select {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: 10px 12px;
+    font: inherit;
+    color: var(--text);
+    background-color: var(--surface);
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgb(37 99 235 / 12%);
+}
+
+/* ==================== Buttons ==================== */
+
+button {
+    min-height: 44px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary);
+    color: #ffffff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:focus-visible {
+    outline: 3px solid rgb(37 99 235 / 35%);
+    outline-offset: 2px;
+}
+
+#addBtn {
+    min-width: 76px;
+}
+
+/* ==================== Search & Filters ==================== */
+
+.filter {
+    max-width: 900px;
+    margin: 0 auto 20px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(130px, 180px);
+    gap: 12px;
+    align-items: center;
+}
+
+#searchBtn {
+    min-width: 90px;
+}
+
+/* ==================== Expense List ==================== */
+
+#expenseList {
+    max-width: 900px;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#expenseList li {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(75px, 1fr) minmax(75px, 1fr) auto;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px rgb(15 23 42 / 3%);
+    overflow-wrap: anywhere;
+}
+
+#expenseList li span:first-child {
+    font-weight: 600;
+}
+
+#expenseList li span:nth-child(2) {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+#expenseList li span:nth-child(3) {
+    color: var(--muted);
+    text-transform: capitalize;
+}
+
+#expenseList li button {
+    background-color: var(--danger);
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 7px;
+    min-height: 36px;
+    white-space: nowrap;
+}
+
+#expenseList li button:hover {
+    background-color: var(--danger-hover);
+}
+
+/* ==================== Responsive: Tablets ==================== */
+
+@media (max-width: 768px) {
+    body {
+        padding: 24px 16px;
+    }
+
+    #overview {
+        grid-template-columns: 1fr;
+    }
+
+    #total {
+        padding: 20px;
+    }
+
+    .AddForm {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #addBtn {
+        width: 100%;
+    }
+
+    #expenseList li {
+        gap: 12px;
+        padding: 16px;
+    }
+}
+
+/* ==================== Responsive: Mobile ==================== */
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    h1 {
+        margin-bottom: 22px;
+    }
+
+    #Category {
+        padding: 16px 12px;
+        gap: 8px;
+    }
+
+    #total,
+    .AddForm {
+        padding: 18px;
+    }
+
+    .AddForm {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .filter {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 10px;
+    }
+
+    #searchBtn {
+        min-width: auto;
+        padding: 10px 14px;
+    }
+
+    #filter {
+        grid-column: 1 / -1;
+    }
+
+    #expenseList {
+        gap: 10px;
+    }
+
+    #expenseList li {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 10px 12px;
+        padding: 14px;
+    }
+
+    #expenseList li span:first-child {
+        grid-column: 1;
+    }
+
+    #expenseList li span:nth-child(2) {
+        grid-column: 1;
+    }
+
+    #expenseList li span:nth-child(3) {
+        grid-column: 1;
+        font-size: 0.9rem;
+    }
+
+    #expenseList li button {
+        grid-column: 2;
+        grid-row: 1 / span 3;
+        align-self: center;
+    }
+}
