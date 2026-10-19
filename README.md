@@ -1,4 +1,5 @@
-# Expense Tracker : https://simran-2080.github.io/Expense-Tracker/
+# Expense Tracker 
+https://simran-2080.github.io/Expense-Tracker/
 
 A simple, interactive Expense Tracker built with **HTML, CSS, and Vanilla JavaScript** to practise JavaScript fundamentals through real-world implementation.
 
